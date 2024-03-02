@@ -14,6 +14,16 @@ let nativebrik = {
 }()
 
 class SampleViewController: UIViewController {
+    
+    override func loadView() {
+        super.loadView()
+        let uiview = nativebrik
+            .experiment
+//            .embeddingUIView("TOP_COMPONENT")
+            .embeddingUIView("TEST_1")
+        uiview.frame = CGRect(x: 20, y: 635, width: UIScreen.main.bounds.width - 40, height: 65)
+        self.view.addSubview(uiview)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
