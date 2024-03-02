@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() {
   runApp(const MyApp());
@@ -56,6 +57,13 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
+
+  MethodChannel _channel = const MethodChannel('com.sample.sample/sample'); // MethodChannelを追加
+
+  // ネイティブスクリーンを起動するメソッドを追加
+  Future<void> _launchNativeScreen() async {
+    await _channel.invokeMethod('sample');
+  }
 
   void _incrementCounter() {
     setState(() {
