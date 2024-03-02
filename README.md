@@ -1,2 +1,4 @@
 # flutterScatter
-This is flutter test App
+This is flutter test SNS App.
+
+
